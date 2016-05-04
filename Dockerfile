@@ -7,8 +7,6 @@ apk --no-cache --update add php7 php7-common php7-memcached php7-xml php7-xmlrpc
     rm -rf /tmp/* && \
     rm -rf /var/cache/apk/*
 
-USER app
-
 EXPOSE 9000
 
 ENTRYPOINT ["/usr/bin/php-fpm", "--nodaemonize"]
