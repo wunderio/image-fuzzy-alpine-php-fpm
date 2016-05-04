@@ -6,8 +6,6 @@ RUN apk --no-cache --update add php php-common php-memcache php-xml php-xmlrpc p
     rm -rf /tmp/* && \
     rm -rf /var/cache/apk/*
 
-USER app
-
 EXPOSE 9000
 
 ENTRYPOINT ["/usr/bin/php-fpm", "--nodaemonize"]
