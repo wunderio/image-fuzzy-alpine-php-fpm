@@ -6,6 +6,7 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositor
 apk --no-cache --update add \
     php7 \
     php7-common \
+    php7-curl \
     php7-memcached \
     php7-xml \
     php7-xmlrpc \
