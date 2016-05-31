@@ -32,4 +32,4 @@ rm -rf /var/cache/apk/*
 
 EXPOSE 9000
 
-ENTRYPOINT ["/usr/bin/php7-fpm", "--nodaemonize"]
+ENTRYPOINT ["/usr/sbin/php-fpm7", "--nodaemonize"]
