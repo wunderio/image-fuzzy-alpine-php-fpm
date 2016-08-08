@@ -26,6 +26,7 @@ apk --no-cache --update add \
     php7-ctype \
     php7-gd \
     php7-dom \
+    php7-bcmath \
     php7-gmagick && \
 rm -rf /tmp/* && \
 rm -rf /var/cache/apk/*
