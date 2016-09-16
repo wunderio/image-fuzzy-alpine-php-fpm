@@ -1,13 +1,14 @@
-FROM quay.io/wunder/wunder-alpine-base:edge
-MAINTAINER ilari.makela@wunderkraut.com
+FROM quay.io/wunder/alpine-base:v3.4
+MAINTAINER aleksi.johansson@wunder.io
 
-# Update the package repository and install applications.
-RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories && \
+# Install php7 packages from edge repositories.
+RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
+echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories && \
 apk --no-cache --update add \
     php7 \
     php7-common \
     php7-curl \
-    php7-memcached \
+    # php7-memcached \
     php7-xml \
     php7-xmlrpc \
     php7-pdo \
@@ -31,6 +32,8 @@ apk --no-cache --update add \
 rm -rf /tmp/* && \
 rm -rf /var/cache/apk/*
 
+# Expose the php port.
 EXPOSE 9000
 
+# Set php-fpm as the entrypoint.
 ENTRYPOINT ["/usr/sbin/php-fpm7", "--nodaemonize"]
