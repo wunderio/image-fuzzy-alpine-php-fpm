@@ -1,4 +1,4 @@
-FROM quay.io/wunder/alpine-base:3.4
+FROM quay.io/wunder/alpine-base:v3.4
 MAINTAINER aleksi.johansson@wunder.io
 
 # Install php7 packages from edge repositories.
