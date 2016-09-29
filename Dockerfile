@@ -8,7 +8,7 @@ apk --no-cache --update add \
     php7 \
     php7-common \
     php7-curl \
-    # php7-memcached \
+    php7-memcached \
     php7-xml \
     php7-xmlrpc \
     php7-pdo \
@@ -29,6 +29,7 @@ apk --no-cache --update add \
     php7-dom \
     php7-bcmath \
     php7-gmagick && \
+# Cleanup
 rm -rf /tmp/* && \
 rm -rf /var/cache/apk/*
 
