@@ -1,3 +1,7 @@
+# wunder/alpine-php
+#
+# VERSION v7.0.12-0
+
 FROM quay.io/wunder/alpine-base:v3.4
 MAINTAINER aleksi.johansson@wunder.io
 
