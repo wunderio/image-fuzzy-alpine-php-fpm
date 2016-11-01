@@ -2,11 +2,9 @@
 
 A base docker image for php applications, on which other application speficif (like Drupal) images can be base, in order to share a set of standards.
 
-## Container
-
-### Maintained
-
 Maintained by: James Nesbitt <james.nesbitt@wunder.io>
+
+## Docker
 
 ### Image
 
@@ -16,7 +14,7 @@ This image is available publicly at:
 
 ### Base
 
-This image is based on on https://github.com/wunderkraut/alpine-base
+This image is based on https://github.com/wunderkraut/alpine-base
 
 ### Modifications
 
