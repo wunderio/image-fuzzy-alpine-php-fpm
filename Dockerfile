@@ -1,11 +1,16 @@
-# wunder/fuzzy-alpine-php
+# wunder/fuzzy-alpine-php-fpm
+#
+# @TODO use these https://github.com/wunderkraut/docker-container-app-configs/tree/master/php
+#    When ther are fixed.
 #
 # VERSION v7.0.12-0
 
 FROM quay.io/wunder/fuzzy-alpine-base:v3.4
 MAINTAINER james.nesbitt@wunder.io
 
-# Install php7 packages from edge repositories.
+####
+# Install php7 packages from edge repositories
+#
 RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
     echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories && \
     apk --no-cache --update add \
@@ -37,8 +42,32 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/community >> /etc/apk/reposit
     rm -rf /tmp/* && \
     rm -rf /var/cache/apk/*
 
-# Expose the php port.
+####
+# Add a www php-fpm service definition
+#
+ADD etc/php7/php-fpm.d/www.conf /etc/php7/php-fpm.d/www.conf
+
+####
+# Add php settings and extension control from Wunder
+#
+ADD etc/php7/conf.d/90_wunder.ini /etc/php7/conf.d/90_wunder.ini
+
+####
+# Some default ENV values
+#
+ENV HOSTNAME phpfpm7
+ENV ENVIRONMENT develop
+
+####
+# Add Drupal 8 specific folder structure so that it has correct permissions when it is volumized.
+#
+# @DEPRECATED based on use-case, this could be avoided.
+#
+#RUN mkdir -p /app/web/sites/default/files && \
+#chown -R app:app /app
+
+# Expose the php port
 EXPOSE 9000
 
-# Set php-fpm as the entrypoint.
+# Set php-fpm as the entrypoint
 ENTRYPOINT ["/usr/sbin/php-fpm7", "--nodaemonize"]
