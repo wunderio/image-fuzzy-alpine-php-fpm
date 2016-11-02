@@ -1,4 +1,6 @@
-# alpine-php
+# image-fuzzy-alpine-php
+
+Fuzzy as in reference to the https://en.wikipedia.org/wiki/The_Mythical_Man-Month book where Fred describes the approach of "write one to throw away" as the best start.
 
 A base docker image for php applications, on which other application speficif (like Drupal) images can be base, in order to share a set of standards.
 
@@ -10,11 +12,11 @@ Maintained by: James Nesbitt <james.nesbitt@wunder.io>
 
 This image is available publicly at:
 
-- quay.io/wunder/alpine-php : [![Docker Repository on Quay](https://quay.io/repository/wunder/alpine-php/status "Docker Repository on Quay")](https://quay.io/repository/wunder/alpine-php)
+- quay.io/wunder/fuzzy-alpine-php : [![Docker Repository on Quay](https://quay.io/repository/wunder/fuzzy-alpine-php/status "Docker Repository on Quay")](https://quay.io/repository/wunder/fuzzy-alpine-php)
 
 ### Base
 
-This image is based on https://github.com/wunderkraut/alpine-base
+This image is based on https://github.com/wunderkraut/image-fuzzy-alpine-base.
 
 ### Modifications
 
@@ -29,7 +31,7 @@ This image is based on https://github.com/wunderkraut/alpine-base
 run this container as an independent service:
 
 ```
-$/> docker run -d quay.io/wunder/alpine-php
+$/> docker run -d quay.io/wunder/fuzzy-alpine-php
 ```
 
 map any needed services such as memcache and dbs, and mount any source code volumes to whatever path needed:
@@ -39,7 +41,7 @@ $/> docker run -d \
       -v "$(pwd):/app/web" \
       -l "my_running_db_container:db.app" \
       -l "my_running_redis_container:redis.app" ''
-      quay.io/wunder/alpine-php
+      quay.io/wunder/fuzzy-alpine-php
 ```
 
 ## TODO
