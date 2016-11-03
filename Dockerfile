@@ -3,7 +3,7 @@
 # @TODO use these https://github.com/wunderkraut/docker-container-app-configs/tree/master/php
 #    When ther are fixed.
 #
-# VERSION v7.0.12-0
+# VERSION v7.0.12-1
 
 FROM quay.io/wunder/fuzzy-alpine-base:v3.4
 MAINTAINER james.nesbitt@wunder.io
@@ -13,6 +13,7 @@ MAINTAINER james.nesbitt@wunder.io
 #
 RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
     echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories && \
+    echo http://dl-cdn.alpinelinux.org/alpine/edge/main >> /etc/apk/repositories && \
     apk --no-cache --update add \
         php7-fpm \
         php7-apcu \
