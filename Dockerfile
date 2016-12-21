@@ -3,7 +3,7 @@
 # @TODO use these https://github.com/wunderkraut/docker-container-app-configs/tree/master/php
 #    When ther are fixed.
 #
-# VERSION v7.0.12-2
+# VERSION v7.0.14-1
 
 FROM quay.io/wunder/fuzzy-alpine-base:v3.4
 MAINTAINER james.nesbitt@wunder.io
