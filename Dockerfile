@@ -11,7 +11,8 @@ MAINTAINER james.nesbitt@wunder.io
 ####
 # Install php7 packages from edge repositories
 #
-RUN apk --no-cache --update add \
+RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories && \
+    apk --no-cache --update add \
         php7-fpm \
         php7-apcu \
         php7-common \
