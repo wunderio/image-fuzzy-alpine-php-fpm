@@ -3,9 +3,9 @@
 # @TODO use these https://github.com/wunderkraut/docker-container-app-configs/tree/master/php
 #    When ther are fixed.
 #
-# VERSION v7.0.12-2
+# VERSION v7.1.5-0
 
-FROM quay.io/wunder/fuzzy-alpine-base:v3.4
+FROM quay.io/wunder/fuzzy-alpine-base:v3.6
 MAINTAINER james.nesbitt@wunder.io
 
 ####
@@ -64,8 +64,8 @@ ENV ENVIRONMENT develop
 #
 # @DEPRECATED based on use-case, this could be avoided.
 #
-#RUN mkdir -p /app/web/sites/default/files && \
-#chown -R app:app /app
+# RUN mkdir -p /app/web/sites/default/files && \
+# chown -R app:app /app
 
 # Expose the php port
 EXPOSE 9000
